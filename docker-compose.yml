@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15-alpine3.18
+    environment:
+      POSTGRES_DB: "alta-cresta"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - alta-cresta-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  alta-cresta-data:
